@@ -1,0 +1,15 @@
+version: '2'
+services:
+  proxypool:
+    build: .
+    links:
+      - redis
+#    environment:
+#      - REDIS_HOST=redis
+    command: python proxypool.py
+  redis:
+    image: redis
+    volumes:
+      - redis_data:/data
+volumes:
+  redis_data:
