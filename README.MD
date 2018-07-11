@@ -1,5 +1,5 @@
 # Introduction
-ProxyPool by python. Store in redis, use LIFO Queue.
+Free proxy pool by python. Store in redis, use LIFO Queue.
 （yingwenbuhao, couhe kanba ）
 
 # Install Dependencies
