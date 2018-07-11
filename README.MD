@@ -3,13 +3,12 @@ ProxyPool by python. Store in redis, use LIFO Queue.
 （yingwenbuhao, couhe kanba ）
 
 # Install Dependencies
-you need install one of :  
+you need install OCR tool for recognition of the digit in the ip or port image :  
 
 * Libtesseract (Python bindings for the C API)
 * Tesseract (wrapper: fork + exec)
 * Cuneiform (wrapper: fork + exec)
 
-for recognition of the digit in the ip or port image.
 # run
 
 ## docker

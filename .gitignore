@@ -105,3 +105,6 @@ venv.bak/
 
 # imgs
 imgs/
+
+# ide
+.idea
