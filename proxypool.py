@@ -182,7 +182,7 @@ class ProxyPool(object):
         获取可用代理(LIFO出队)
         :return:
         """
-        self.redis_client.lpop(self.proxies_key)
+        return self.redis_client.lpop(self.proxies_key)
 
 
 class Recognizer(object):
