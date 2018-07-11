@@ -11,6 +11,12 @@ you need install OCR tool for recognition of the digit in the ip or port image :
 
 # run
 
+## python 
+```shell
+> pip install -r requirements.txt
+> python proxypool.py
+```
+
 ## docker
 ```shell
 > docker-compose build
