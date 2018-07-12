@@ -11,6 +11,7 @@ import hashlib
 import copy
 import re
 import time
+import random
 import os
 from config import proxies_config as proxies_configs, REDIS_HOST, REDIS_PORT, REDIS_KEY_PREFIX, FETCH_THREAD_NUMBER
 import pickle
@@ -177,12 +178,21 @@ class ProxyPool(object):
         """
         self.redis_client.lpush(self.proxies_key, proxy)
 
-    def get_proxy(self):
+    def pop_last_proxy(self):
         """
         获取可用代理(LIFO出队)
         :return:
         """
         return self.redis_client.lpop(self.proxies_key)
+
+    def get_proxies_size(self):
+        return self.redis_client.llen(self.proxies_key)
+
+    def get_proxy(self, index):
+        return self.redis_client.lindex(self.proxies_key, index)
+
+    def get_random_proxy(self):
+        return self.get_proxy(random.randint(1, self.get_proxies_size() - 1))
 
 
 class Recognizer(object):
